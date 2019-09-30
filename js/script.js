@@ -37,37 +37,21 @@ const pageDisplay = 10;
        that will be passed into the parens later when you call or
        "invoke" the function
 ***/
-// PREVIOUS DRAFT EDITION:
-//function showPage (list, page) {
-//   const startIndex = (page * pageDisplay) - pageDisplay;
-//   const endIndex = (page * pageDisplay) - 1;
-//
-// for (let i = 0; i < list.length; i ++)  {
-//   let indexList = '';
-//   list[i].style.display = 'list-item';
-//   if (i >= startIndex && i <= endIndex) {
-//     indexList += list[i];
-//     studentList.innerHTML = indexList;
-//   } else {
-//     list[i].style.display = 'none';
-//   }
-//
-//     }
-//
-// } NEW REVISION - Still does not display pageDisplay properly.
 function showPage (list, page) {
   const startIndex = (page * pageDisplay) - pageDisplay;
   const endIndex = (page * pageDisplay) - 1;
 
-for (let i = 0; i < list.length; i ++)  {
-  let list = list[i];
+for (let i = 0; i < list.length; i += 1)  {
+
   if (i >= startIndex && i <= endIndex) {
-    document.getElementById('list').style.display = 'list-item';
-  } else {
-  list.style.display = 'none';
-  };
+    list[i].style.display = 'block';
+  } else { 
+    list[i].style.display = 'none';
+    }
+  }
 }
 
+showPage(studentList, 1);
 
 
 
