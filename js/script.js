@@ -37,24 +37,36 @@ const pageDisplay = 10;
        that will be passed into the parens later when you call or
        "invoke" the function
 ***/
-
+// function showPage (list, page) {
+//   const startIndex = (page * pageDisplay) - pageDisplay;
+//   const endIndex = (page * pageDisplay) - 1;
+//
+// for (let i = 0; i < list.length; i ++)  {
+//   let indexList = '';
+//   list[i].style.display = 'list-item';
+//   if (i >= startIndex && i <= endIndex) {
+//     indexList += list[i];
+//     studentList.innerHTML = indexList;
+//   } else {
+//     list[i].style.display = 'none';
+//   }
+//
+//     }
+//
+// }
 function showPage (list, page) {
   const startIndex = (page * pageDisplay) - pageDisplay;
   const endIndex = (page * pageDisplay) - 1;
 
 for (let i = 0; i < list.length; i ++)  {
-  let indexList = '';
-  list[i].style.display = 'list-item';
+  let list = list[i];
   if (i >= startIndex && i <= endIndex) {
-    indexList += list[i];
-    studentList.innerHTML = indexList;
+    document.getElementById('list').style.display = 'list-item';
   } else {
-    list[i].style.display = 'none';
-  }
-
-    }
-
+  list.style.display = 'none';
+  };
 }
+
 
 
 
