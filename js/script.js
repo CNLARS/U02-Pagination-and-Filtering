@@ -39,14 +39,14 @@ const pageDisplay = 10;
 ***/
 
 function showPage (list, page) {
-const startIndex = (page * pageDisplay) - pageDisplay;
-const endIndex = (page * pageDisplay) - 1;
+  const startIndex = (page * pageDisplay) - pageDisplay;
+  const endIndex = (page * pageDisplay) - 1;
 
 for (let i = 0; (i >= startIndex && i <= endIndex).length; i += 1)  {
-
-list += studentList;
-document.getElementById('list[i]');
-  }
+  studentList[i].length.innerHTML = list;
+  document.getElementsByTagName = studentList[i];
+  console.log(showPage(list, page));
+    }
 
 }
 
