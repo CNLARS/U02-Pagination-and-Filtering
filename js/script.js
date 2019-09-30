@@ -42,10 +42,16 @@ function showPage (list, page) {
   const startIndex = (page * pageDisplay) - pageDisplay;
   const endIndex = (page * pageDisplay) - 1;
 
-for (let i = 0; (i >= startIndex && i <= endIndex).length; i += 1)  {
-  studentList[i].length.innerHTML = list;
-  document.getElementsByTagName = studentList[i];
-  console.log(showPage(list, page));
+for (let i = 0; i < list.length; i ++)  {
+  let indexList = '';
+  list[i].style.display = 'list-item';
+  if (i >= startIndex && i <= endIndex) {
+    indexList += list[i];
+    studentList.innerHTML = indexList;
+  } else {
+    list[i].style.display = 'none';
+  }
+
     }
 
 }
