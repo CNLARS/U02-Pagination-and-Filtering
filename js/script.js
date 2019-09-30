@@ -37,7 +37,8 @@ const pageDisplay = 10;
        that will be passed into the parens later when you call or
        "invoke" the function
 ***/
-// function showPage (list, page) {
+// PREVIOUS DRAFT EDITION:
+//function showPage (list, page) {
 //   const startIndex = (page * pageDisplay) - pageDisplay;
 //   const endIndex = (page * pageDisplay) - 1;
 //
@@ -53,7 +54,7 @@ const pageDisplay = 10;
 //
 //     }
 //
-// }
+// } NEW REVISION - Still does not display pageDisplay properly.
 function showPage (list, page) {
   const startIndex = (page * pageDisplay) - pageDisplay;
   const endIndex = (page * pageDisplay) - 1;
