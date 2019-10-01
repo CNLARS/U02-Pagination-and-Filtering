@@ -45,7 +45,7 @@ for (let i = 0; i < list.length; i += 1)  {
 
   if (i >= startIndex && i <= endIndex) {
     list[i].style.display = 'block';
-  } else { 
+  } else {
     list[i].style.display = 'none';
     }
   }
@@ -59,7 +59,56 @@ showPage(studentList, 1);
    Create the `appendPageLinks function` to generate, append, and add
    functionality to the pagination buttons.
 ***/
+function appendPageLinks (list) {
+const div = document.createElement('div');
+const ul = document.createElement('ul');
+const li = document.createElement('li');
 
+div.className = 'pagination'
+getElementsByClassName('page').appendChild(div);
+getElementsByClassName('pagination').appendChild(ul);
+ul.appendChild(li); //or li[i];?
+
+//for (i = 0; i < list.length * pageDisplay; i ++) {}
+
+} // <---function bracket
+
+/*
+1. Determine how many pages are needed for the list by dividing the
+total number of list items by the max number of items per page
+2. Create a div, give it the “pagination” class, and append it to the .page div
+3. Add a ul to the “pagination” div to store the pagination links
+4. for every page, add li and a tags with the page number text
+5. Add an event listener to each a tag. When they are clicked
+call the showPage function to display the appropriate page
+6. Loop over pagination links to remove active class from all links
+7. Add the active class to the link that was just clicked. You can identify that
+clicked link using event.target
+*/
+
+  //<!-- pagination HTML VISUAL EXAMPLE -->
+  // <div class="pagination">
+  //   <ul>
+  //     <li>
+  //       <a class="active" href="#">1</a>
+  //     </li>
+  //      <li>
+  //       <a href="#">2</a>
+  //     </li>
+  //      <li>
+  //       <a href="#">3</a>
+  //     </li>
+  //      <li>
+  //       <a href="#">4</a>
+  //     </li>
+  //      <li>
+  //       <a href="#">5</a>
+  //     </li>
+  //   </ul>
+  // </div>
+  //<!-- end pagination -->
+
+}
 
 
 
