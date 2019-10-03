@@ -69,15 +69,28 @@ getElementsByClassName('.page').appendChild(div);
 getElementsByClassName('pagination').appendChild(ul);
 ul.appendChild(li); //or li[i];?
 
-for (i = 0; i < list.length; i ++) {
+if (i = 0; i < list.length; i ++) {
   let page = (list[i] / Math.max(pageDisplay);
+  for (let i = 0; i < page.length; i++) {
 
+  }
 }
+for (i = 0; i < li.length; i ++) {
+li.createElement('a');
+ li.addEventListener('click',() => {
+
+
+});
+}
+
+
 // if (){
 //   showPage(studentList[i], )
 // }
 
 } // <---function bracket
+
+
 
 /*
 1. MAYBE? Determine how many pages are needed for the list by dividing the
