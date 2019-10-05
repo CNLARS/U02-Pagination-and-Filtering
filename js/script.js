@@ -40,15 +40,15 @@ showPage(studentList, 1);
    Create the `appendPageLinks function` to generate, append, and add
    functionality to the pagination buttons.
 ***/
-const appendPageLinks => (list) {
-const div = document.createElement('div');
-const ul = document.getElementsByTagName('ul');
-const listItem = document.getElementsByTagName('li');
+function appendPageLinks (list) {
+
+
+const li = document.getElementsByTagName('li');
 
 /* 1. Determine how many pages are needed for the list by dividing the
 total number of list items by the max number of items per page*/
-while (i = 0; i < listItem.length; i ++) {
-  let page = (listItem[i] / Math.max(pageDisplay));
+for (let i = 0; i < li.length; i ++) {
+  let page = (li[i] / Math.max(pageDisplay));
 
   for (let i = 0; i < page.length; i++) {
 if (i <= page.length) {
@@ -58,40 +58,50 @@ if (i <= page.length) {
 }
 console.log(page)[i];
   }
-}
+
 //2. Create a div, give it the “pagination” class, and append it to the .page div
+const div = document.createElement('div');
 div.className = 'pagination';
-document.getElementsByClassName('.page')[0].appendChild(div);
+const pageDiv = document.body.firstElementChild;
+pageDiv.appendChild(div);
+
 
 //3. Add a ul to the “pagination” div to store the pagination links
-document.getElementsByClassName('pagination').appendChild(ul);
-ul.appendChild(li); //or li[i];?
+const ul = document.createElement('ul');
+const divPagination = document.body.firstElementChild.lastElementChild;
+divPagination.appendChild(ul);
 
 //4. for every page, add li and a tags with the page number text
-for (i = 0; i < page.length; i ++) {
-page[i] += listItem.a;
-page[i].textContent = page.textContent.number.parseInt();
+for (i = 0; i < li.length; i ++) {
+page[i] += li.a;
+page[i].textContent = page.number.parseInt();
 
 /*5. Add an event listener to each a tag. When they are clicked
 call the showPage function to display the appropriate page*/
-listItem.addEventListener('click', getElementsByTagName('a'), (showPage()) => {
+li.addEventListener('click', getElementsByTagName('a')); {
 for (i = 0; i < showPage.length; i++) {
-  // if (){
-  //   showPage(studentList[i], )
-  // }
+  showPage(studentList, page[i]);
+}
+//6. Loop over pagination links to remove active class from all links
+for  (i = 0; i < pagination.length; i ++) {
+const pagination = document.getElementsByClassName('pagination');
+
+if (i >= startIndex && i <= endIndex) {
+  pagination[i].style.display = 'remove';
+} else {
+  pagination[i].style.display = 'add';
+  }
+  /*7. Add the active class to the link that was just clicked. You can identify that
+  clicked link using event.target*/
+
 }
 
-}); // addEventListener bracket
+}; // addEventListener bracket
 } // for bracket
 
 } // <---function bracket
-
-/*
-6. Loop over pagination links to remove active class from all links
-
-7. Add the active class to the link that was just clicked. You can identify that
-clicked link using event.target
-*/
+}
+appendPageLinks();
 
   //<!-- pagination HTML VISUAL EXAMPLE -->
   // <div class="pagination">
