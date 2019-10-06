@@ -42,7 +42,6 @@ showPage(studentList, 1);
 ***/
 function appendPageLinks (list) {
 
-
 const li = document.getElementsByTagName('li');
 
 /* 1. Determine how many pages are needed for the list by dividing the
@@ -72,15 +71,22 @@ const divPagination = document.body.firstElementChild.lastElementChild;
 divPagination.appendChild(ul);
 
 //4. for every page, add li and a tags with the page number text
-for (i = 0; i < li.length; i ++) {
-page[i] += li.a;
-page[i].textContent = page.number.parseInt();
+function eachPage (array) {
+
+  for (i = 0; i < page.length; i ++) {
+      page[i] += li.target;
+      page.number(text)[i];
+}
 
 /*5. Add an event listener to each a tag. When they are clicked
 call the showPage function to display the appropriate page*/
-li.addEventListener('click', getElementsByTagName('a')); {
+li.addEventListener('click', () => {
+  let a = document.getElementsByTagName('a')[0];
+
+  a.showPage(studentList, eachPage() );
+
 for (i = 0; i < showPage.length; i++) {
-  showPage(studentList, page[i]);
+  a[i].style.display = 'block';
 }
 //6. Loop over pagination links to remove active class from all links
 for  (i = 0; i < pagination.length; i ++) {
@@ -96,11 +102,11 @@ if (i >= startIndex && i <= endIndex) {
 
 }
 
-}; // addEventListener bracket
-} // for bracket
+}); // addEventListener bracket
+} // function bracket
 
-} // <---function bracket
-}
+} // <---function 2 bracket
+} //final bracket
 appendPageLinks();
 
   //<!-- pagination HTML VISUAL EXAMPLE -->
