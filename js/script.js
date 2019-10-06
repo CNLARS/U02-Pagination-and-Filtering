@@ -71,35 +71,41 @@ const divPagination = document.body.firstElementChild.lastElementChild;
 divPagination.appendChild(ul);
 
 //4. for every page, add li and a tags with the page number text
+const listItem = document.getElementsByTagName('li');
+*** ul.appendChild(li);
+const a = document.createElement('a')
+listItem.appendChild(a);
+***
 function eachPage (array) {
 
   for (i = 0; i < page.length; i ++) {
-      page[i] += li.target;
-      page.number(text)[i];
+      page[i] += li.a;
+      page[i].textContent = 'number';
 }
 
 /*5. Add an event listener to each a tag. When they are clicked
 call the showPage function to display the appropriate page*/
-li.addEventListener('click', () => {
+li.addEventListener('click', (event) => {
   let a = document.getElementsByTagName('a')[0];
 
   a.showPage(studentList, eachPage() );
 
-for (i = 0; i < showPage.length; i++) {
-  a[i].style.display = 'block';
+for (i = 0; i < page.length; i++) {
+  page[i].style.display = 'block';
+}
+
+if (i > page.length) {
+  page[i].style.display = 'none';
 }
 //6. Loop over pagination links to remove active class from all links
 for  (i = 0; i < pagination.length; i ++) {
 const pagination = document.getElementsByClassName('pagination');
+  pagination[i].classList.remove('active');
 
-if (i >= startIndex && i <= endIndex) {
-  pagination[i].style.display = 'remove';
-} else {
-  pagination[i].style.display = 'add';
-  }
   /*7. Add the active class to the link that was just clicked. You can identify that
   clicked link using event.target*/
-
+const eventTarget = event.target;
+a.eventTarget.classList.add('active');
 }
 
 }); // addEventListener bracket
