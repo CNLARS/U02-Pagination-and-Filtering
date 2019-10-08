@@ -8,18 +8,6 @@ FSJS project 2 - List Filter and Pagination
 const studentList = document.querySelectorAll('.student-item');
 const pageDisplay = 10;
 
-/***
-   Create the `showPage` function to hide all of the items in the
-   list except for the ten you want to show.
-
-   Pro Tips:
-     - Remember that the first student has an index of 0.
-     - Remember that a function `parameter` goes in the parens when
-       you initially define the function, and it acts as a variable
-       or a placeholder to represent the actual function `argument`
-       that will be passed into the parens later when you call or
-       "invoke" the function
-***/
 function showPage (list, page) {
   const startIndex = (page * pageDisplay) - pageDisplay;
   const endIndex = (page * pageDisplay) - 1;
@@ -41,14 +29,11 @@ showPage(studentList, 1);
    functionality to the pagination buttons.
 ***/
 function appendPageLinks (list) {
-
-const li = document.getElementsByTagName('li');
-
+  const li = document.getElementsByTagName('li');
 /* 1. Determine how many pages are needed for the list by dividing the
 total number of list items by the max number of items per page*/
 for (let i = 0; i < li.length; i ++) {
   let page = (li[i] / Math.max(pageDisplay));
-
   for (let i = 0; i < page.length; i++) {
 if (i <= page.length) {
   page[i].style.display = 'block';
@@ -64,28 +49,34 @@ div.className = 'pagination';
 const pageDiv = document.body.firstElementChild;
 pageDiv.appendChild(div);
 
-
 //3. Add a ul to the “pagination” div to store the pagination links
 const ul = document.createElement('ul');
 const divPagination = document.body.firstElementChild.lastElementChild;
 divPagination.appendChild(ul);
 
 //4. for every page, add li and a tags with the page number text
-const listItem = document.getElementsByTagName('li');
-*** ul.appendChild(li);
-const a = document.createElement('a')
-listItem.appendChild(a);
-***
-function eachPage (array) {
+// const li = document.body.createElement('li')
+// const a = document.createElement('a');
+
+// const listItem = document.getElementsByTagName('li');
+// ul.appendChild(li);
+// const a = document.createElement('a');
+// const liA = document.body.firstElementChild.lastElementChild.firstElementChild;
+// listItem.appendChild(liA);
+// liA.appendChild(a);
 
   for (i = 0; i < page.length; i ++) {
-      page[i] += li.a;
-      page[i].textContent = 'number';
+    const li = document.body.createElement('li')
+    const a = document.createElement('a');
+    const ul = document.querySelectorAll('pagination');
+      ul.appendChild(li);
+      ul.appendChild(a);
+      page[i].style.display = 'number';
 }
 
 /*5. Add an event listener to each a tag. When they are clicked
 call the showPage function to display the appropriate page*/
-li.addEventListener('click', (event) => {
+target.addEventListener('click', (event) => {
   let a = document.getElementsByTagName('a')[0];
 
   a.showPage(studentList, eachPage() );
@@ -109,7 +100,7 @@ a.eventTarget.classList.add('active');
 }
 
 }); // addEventListener bracket
-} // function bracket
+
 
 } // <---function 2 bracket
 } //final bracket
