@@ -48,7 +48,7 @@ divPagination.appendChild(ul);
     const li = document.createElement('li')
     const a = document.createElement('a');
 
-    li.innerText = i;
+    a.innerText = i;
     li.appendChild(a);
     ul.appendChild(li);
   }
