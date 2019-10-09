@@ -23,25 +23,14 @@ for (let i = 0; i < list.length; i += 1)  {
 }
 
 showPage(studentList, 1);
-
 /***
    Create the `appendPageLinks function` to generate, append, and add
    functionality to the pagination buttons.
 ***/
 function appendPageLinks (list) {
-  const li = document.getElementsByTagName('li');
 /* 1. Determine how many pages are needed for the list by dividing the
 total number of list items by the max number of items per page*/
-for (let i = 0; i < li.length; i ++) {
-  let page = (li[i] / Math.max(pageDisplay));
-  for (let i = 0; i < page.length; i++) {
-if (i <= page.length) {
-  page[i].style.display = 'block';
-} else {
-  page[i].style.display = 'none';
-}
-console.log(page)[i];
-  }
+let page = Math.ceil(studentList.length/pageDisplay);
 
 //2. Create a div, give it the “pagination” class, and append it to the .page div
 const div = document.createElement('div');
@@ -55,31 +44,28 @@ const divPagination = document.body.firstElementChild.lastElementChild;
 divPagination.appendChild(ul);
 
 //4. for every page, add li and a tags with the page number text
-// const li = document.body.createElement('li')
-// const a = document.createElement('a');
-
-// const listItem = document.getElementsByTagName('li');
-// ul.appendChild(li);
-// const a = document.createElement('a');
-// const liA = document.body.firstElementChild.lastElementChild.firstElementChild;
-// listItem.appendChild(liA);
-// liA.appendChild(a);
-
-  for (i = 0; i < page.length; i ++) {
-    const li = document.body.createElement('li')
+  for (i = 1; i <= page; i ++) {
+    const li = document.createElement('li')
     const a = document.createElement('a');
-    const ul = document.querySelectorAll('pagination');
-      ul.appendChild(li);
-      ul.appendChild(a);
-      page[i].style.display = 'number';
-}
+
+    li.innerText = i;
+    li.appendChild(a);
+    ul.appendChild(li);
+  }
 
 /*5. Add an event listener to each a tag. When they are clicked
 call the showPage function to display the appropriate page*/
-target.addEventListener('click', (event) => {
-  let a = document.getElementsByTagName('a')[0];
 
-  a.showPage(studentList, eachPage() );
+for (i = 1; i < divPagination.length; i ++ ) {
+
+a.addEventListener('click', event);
+showPage(studentList, li[i]); //# is placeholder
+ // addEventListener bracket
+
+
+} //for loop bracket
+//Draft line
+
 
 for (i = 0; i < page.length; i++) {
   page[i].style.display = 'block';
@@ -89,7 +75,7 @@ if (i > page.length) {
   page[i].style.display = 'none';
 }
 //6. Loop over pagination links to remove active class from all links
-for  (i = 0; i < pagination.length; i ++) {
+for  (i = 0; i < divPagination.length; i ++) {
 const pagination = document.getElementsByClassName('pagination');
   pagination[i].classList.remove('active');
 
@@ -99,11 +85,11 @@ const eventTarget = event.target;
 a.eventTarget.classList.add('active');
 }
 
-}); // addEventListener bracket
+
 
 
 } // <---function 2 bracket
-} //final bracket
+
 appendPageLinks();
 
   //<!-- pagination HTML VISUAL EXAMPLE -->
