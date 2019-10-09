@@ -3,8 +3,6 @@ Treehouse Techdegree:
 FSJS project 2 - List Filter and Pagination
 ******************************************/
 
-// Study guide for this project - https://drive.google.com/file/d/1OD1diUsTMdpfMDv677TfL1xO2CEkykSz/view?usp=sharing
-
 const studentList = document.querySelectorAll('.student-item');
 const pageDisplay = 10;
 
@@ -49,69 +47,30 @@ divPagination.appendChild(ul);
     const a = document.createElement('a');
 
     a.innerText = i;
+    a.href = '#';
     li.appendChild(a);
     ul.appendChild(li);
-  }
-
+//Instructions say to add intial active class to 1st a tag.
+  const activeFrontPage = document.querySelector('div.pagination a');
+  activeFrontPage.className = 'active';
 /*5. Add an event listener to each a tag. When they are clicked
 call the showPage function to display the appropriate page*/
+//Defining a tags
+const pageLinks = document.querySelector('a');
 
-for (i = 1; i < divPagination.length; i ++ ) {
-
-a.addEventListener('click', event);
-showPage(studentList, li[i]); //# is placeholder
- // addEventListener bracket
-
-
-} //for loop bracket
-//Draft line
-
-
-for (i = 0; i < page.length; i++) {
-  page[i].style.display = 'block';
-}
-
-if (i > page.length) {
-  page[i].style.display = 'none';
-}
+pageLinks.addEventListener('click', (e) => {
+  showPage(studentList, i);
 //6. Loop over pagination links to remove active class from all links
-for  (i = 0; i < divPagination.length; i ++) {
-const pagination = document.getElementsByClassName('pagination');
-  pagination[i].classList.remove('active');
-
-  /*7. Add the active class to the link that was just clicked. You can identify that
+/*7. +Add the active class to the link that was just clicked. You can identify that
   clicked link using event.target*/
-const eventTarget = event.target;
-a.eventTarget.classList.add('active');
+  for  (let i = 0; i < divPagination.length; i ++) {
+  const links = querySelectorAll('a');
+    links[i].className.remove('active');
+    const selection = e.target;
+      selection.className.add('active');
+  }
+    });
+  }
 }
-
-
-
-
-} // <---function 2 bracket
-
 appendPageLinks();
-
-  //<!-- pagination HTML VISUAL EXAMPLE -->
-  // <div class="pagination">
-  //   <ul>
-  //     <li>
-  //       <a class="active" href="#">1</a>
-  //     </li>
-  //      <li>
-  //       <a href="#">2</a>
-  //     </li>
-  //      <li>
-  //       <a href="#">3</a>
-  //     </li>
-  //      <li>
-  //       <a href="#">4</a>
-  //     </li>
-  //      <li>
-  //       <a href="#">5</a>
-  //     </li>
-  //   </ul>
-  // </div>
-  //<!-- end pagination -->
-
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
